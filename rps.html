@@ -8,8 +8,59 @@
   <body>
     <script>
       // take inputs (rock paper or scissors)
+      playerSelection = prompt(
+        "Enter Rock, Paper, or Scissors: "
+      ).toUpperCase();
+      if ((playerSelection = "ROCK")) {
+        print("You Chose Rock!");
+      } else if ((playerSelection = "PAPER")) {
+        print("You Chose Paper!");
+      } else if ((playerSelection = "SCISSORS")) {
+        print("You Chose Scissors");
+      } else {
+        print("Sorry, please enter Rock, Paper, or Scissors as an input");
+      }
       // randomly generate computer inputs
+      function computerspick() {
+        let computerOptions = ["ROCK", "PAPER", "SCISSORS"];
+        let c = getRandomInt(3);
+        let computerSelection = computerOptions[c];
+        print("The computer chose " + computerSelection);
+      }
       // compare the two inputs and decide winner
+      function playRound(playerSelection, computerSelection) {
+        if (playerSelection === "ROCK") {
+          if (computerSelection === "PAPER") {
+            return "You Lose, Paper beats Rock";
+          } else if (computerSelection === "SCISSORS") {
+            return "You Win! Rock beats Scissors";
+          } else if (computerSelection === playerSelection) {
+            return "Its a draw, try again";
+          } else {
+            return "There has been a terrible mistake";
+          }
+        } else if (playerSelection === "PAPER") {
+          if (computerSelection === "SCISSORS") {
+            return "You Lose, Paper beats Scissors";
+          } else if (computerSelection === "ROCK") {
+            return "You Win! Paper beats Rock";
+          } else if (computerSelection === playerSelection) {
+            return "Its a draw, try again";
+          } else {
+            return "There has been a terrible mistake";
+          }
+        } else if (playerSelection === "SCISSORS") {
+          if (computerSelection === "ROCK") {
+            return "You Lose, Rock beats Scissors";
+          } else if (computerSelection === "PAPER") {
+            return "You Win! Scissors beats Paper";
+          } else if (computerSelection === playerSelection) {
+            return "Its a draw, try again";
+          } else {
+            return "There has been a terrible mistake";
+          }
+        }
+      }
       // print winner and tally who wins
       // reset games until either user or computer win 5 games
     </script>
