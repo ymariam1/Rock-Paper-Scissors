@@ -21,14 +21,14 @@
         print("Sorry, please enter Rock, Paper, or Scissors as an input");
       }
       // randomly generate computer inputs
-      function computerspick() {
-        let computerOptions = ["ROCK", "PAPER", "SCISSORS"];
-        let c = getRandomInt(3);
-        let computerSelection = computerOptions[c];
-        print("The computer chose " + computerSelection);
-      }
+      let computerOptions = ["ROCK", "PAPER", "SCISSORS"];
+      let c = getRandomInt(3);
+      let computerSelection = computerOptions[c];
+      print("The computer chose " + computerSelection);
+
       // compare the two inputs and decide winner
-      function playRound(playerSelection, computerSelection) {
+      function playRound(playerSelection, computersSelection) {
+        // a is user wins, b is computer wins
         if (playerSelection === "ROCK") {
           if (computerSelection === "PAPER") {
             return "You Lose, Paper beats Rock";
@@ -62,7 +62,12 @@
         }
       }
       // print winner and tally who wins
-      // reset games until either user or computer win 5 games
+      function game() {
+        // reset games until either user or computer win 5 games
+        for (let i = 0; i < 5; i++) {
+          console.log(playRound(playerSelection, computerSelection));
+        }
+      }
     </script>
   </body>
 </html>
