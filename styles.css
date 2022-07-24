@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.reset {
+  display: none;
+}
+.below {
+  display: inline;
+}
+.body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+img {
+  width: 160px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.images {
+  flex-direction: column;
+}
+.button:hover {
+  transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
+}
+.button:onclick {
+  transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
+}
